@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Header />
         <Main />        
-        <Footer /> 
+        {/* <Footer />  */}
         {/* {localStorage.token ? 
           ( <div>
               <Header />

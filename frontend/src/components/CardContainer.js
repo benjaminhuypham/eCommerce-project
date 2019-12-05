@@ -10,7 +10,7 @@ const CardContainer = ({items, updateCartItem}) => {
   }
 
   return (
-    <div>
+    <div className="card-container">
       {$items()}
     </div>
   );

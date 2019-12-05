@@ -10,7 +10,7 @@ export default class Card extends Component {
   render() {
     const {item} = this.props
     return (
-      <div>  
+      <div className="card">  
         <img src={item.image} alt={`${item.image}`} />
         <p>{item.brand}</p>
         <p>{item.title}</p>

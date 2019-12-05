@@ -1,8 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 * {
   border: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #5f5f79;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
 }
+
+// Header //
+.header {
+  width: 90%;
+  margin: auto; 
+  display: flex; 
+  align-items: center;
+  background-color: #eb2f64;
+  .logo {
+    flex: .5;
+    text-align: center;
+    font-weight: 1200;
+    .logo-link {
+      text-decoration: none;
+      color: white; 
+    }
+  }
+  nav {
+    flex: 3; 
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      li {
+        list-style: none;
+        .option-1 {
+          font-size: 1.2rem;
+          text-decoration: none;
+          border-bottom: 1px #707070 solid;
+          text-transform: uppercase;
+          color: white; 
+          &:hover {
+            color: rgb(247, 211, 144); 
+            border-bottom: 1px rgb(247, 211, 144) solid;
+            transform: scale(1.5);
+          }
+        }
+        .option-2 {
+          font-size: 1.2rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: white; 
+          &:hover {
+            color: rgb(247, 211, 144); 
+          }
+        }    
+      }
+    }
+  }
+  .cart-icon {
+    flex: .5;
+  }
+}
+
+
+// Main //
+
+.main {
+  height: 90vh; 
+  width: 90%; 
+  margin: auto; 
+}
+
+// Home //
+
+.home {
+  height: 90vh; 
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-image: url("https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-size: cover;
+  h1 {
+    font-size: 4rem;
+    animation: moveInLeft 3s ease;
+    margin-bottom: 10px;
+    color: white; 
+  }
+  p {
+    font-size: 2rem;
+    margin-top: 1px;
+    animation: moveInRight 3s ease;
+    color: white; 
+  }
+  .shop-button {
+    font-size: 2rem;
+    padding: .5em .8em; 
+    border-radius: 40px;
+    text-decoration: none;
+    animation: moveInUp 3s ease;
+    border: 1px white solid;
+    color: grey;  
+    background-color: white;
+    box-shadow: 5px 5px grey;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px)
+  }
+  60% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: 1;
+    transform: translate(0);
+  }
+}
+
+
+// Shop //
+.shop {
+  background-color: #ffffff;
+  background: url("https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat fixed ; 
+  background-size: cover; 
+  display: flex; 
+  width: 100%;
+  margin: auto; 
+  .card-container {
+    display: flex; 
+    flex-flow: row wrap;
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 20%;
+      margin: 2em; 
+      padding: 1em;
+      border: 1px grey solid; 
+      background-color: rgb(240, 240, 240);
+      border-radius: 20px;
+      &:hover{
+        transform: scale(1.03);
+        transition: transform 0.75s ease;
+      }
+      img {
+        height: 225px; 
+        width: 90%;
+      }
+      button {
+        border: 1px red solid; 
+        padding: 7.5px;
+        border-radius: 15px;
+        background-color: #df295d ;
+        color: white; 
+        outline: none;
+        &:hover {
+          cursor: pointer;
+          transform: translateY(-1px);
+        }
+        &:focus {
+          cursor: pointer;
+          transform: translateY(1px);        
+        }
+      }
+    }
+  } 
+  
+}
+
+
+
+
+// Cart // 
 
 .cart {
   display: flex;
@@ -15,6 +234,7 @@
   flex-direction: column;
   border: 1px green solid; 
   width: 75%;
+  margin: auto; 
   div {
     display: flex; 
     p {
@@ -29,11 +249,76 @@
   display: flex;
   border: 1px blue solid; 
 
-  div {
+  .item, .price, .quantity {
     border: 1px lightblue solid; 
     flex: 1;
     align-items: center;
+    justify-content: center;
+  }
+  .item {
+    display: flex; 
+    flex-direction: column;
+  }
+  .quantity {
+    display: flex; 
+    justify-content: space-evenly;
+    button {
+      border: 1px red solid; 
+    }
   }
 }
 
 
+// Contact // 
+
+.contact {
+
+  height: 90%;
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  background: url("https://images.pexels.com/photos/955081/pexels-photo-955081.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat fixed;
+  background-size: cover;
+
+  // align-items: center;
+  // justify-content: space-between;
+  h1 {
+    font-size: 3rem;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: underline;
+    color: white; 
+  }
+  #contact-form {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label {
+      color: white; 
+    }
+    .contact-name, .contact-name-2 {
+      border-bottom: 1px grey solid; 
+      margin: 1em;
+      width: 30%;
+      outline: none;
+      height: 15%; 
+    }
+    .contact-name-2 {
+      border: 1px grey solid; 
+      height: 50%; 
+      border-radius: 5px;
+    }
+    .contact-submit-button {
+      border: 1px red solid; 
+      margin-top: 2em;
+      padding: 1.2em 4em; 
+      border-radius: 30px;
+      color: white; 
+      font-size: 1em;
+      background-color: #df295d;
+    }
+  }
+}

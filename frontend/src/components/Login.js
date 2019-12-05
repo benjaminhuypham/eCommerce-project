@@ -10,9 +10,9 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
-    const {history} = this.props
+    // const {history} = this.props
     event.preventDefault()
-    fetch("http://localhost:3000/authenticate", {
+    fetch("http://localhost:3000/user", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
@@ -23,7 +23,7 @@ export default class Login extends Component {
       })
     }).then(response => response.json())
     // .then(token => localStorage.setItem("token",token.auth_token.token)) 
-5    // .then(() => history.push({
+    // .then(() => history.push({
     //   pathname: '/shop'
     // })).then(() => this.updateShop())
   }
