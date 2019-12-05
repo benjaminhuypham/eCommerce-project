@@ -1,0 +1,39 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-container {
+  display: flex; 
+  flex-direction: column;
+  border: 1px green solid; 
+  width: 75%;
+  div {
+    display: flex; 
+    p {
+      flex: 1; 
+      text-align: center;
+      text-decoration: underline;
+    }
+  }
+}
+
+.cart-item {
+  display: flex;
+  border: 1px blue solid; 
+
+  div {
+    border: 1px lightblue solid; 
+    flex: 1;
+    align-items: center;
+  }
+}
+
+
